@@ -11,7 +11,7 @@ const Button = (props) => {
   return (
     <button
       className={`btn ${bg} ${size} ${animate}`}
-      onClick={props.onclick ? props.onclick() : null}
+      onClick={props.onClick ? () => props.onClick() : null}
     >
       <span className="btn__txt">{props.children}</span>
       {props.icon ? (
@@ -21,7 +21,7 @@ const Button = (props) => {
       ) : null}
     </button>
   );
-}
+};
 
 Button.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
